@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Influencer Profile</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
+        </script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="script/influencer-profile.js"></script>
+    <link rel="stylesheet" href="style/influencer-profile.css">
+</head>
+
+<body style="background-color:#E0FFFF; ">
+    <div id="spinner"></div>
+    <div id="bg"></div>
+    <nav class="navbar navbar-expand-lg bg-body-info bg-info sticky-top" style="padding: 5px;">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">
+                <img src="pics/_d4ce8f95-cabc-4ba7-a67e-dc6f40cf257a.jpeg" alt="Logo" width="30" height="30" style="border-radius: 20%;"
+                    class="d-inline-block align-text-top">
+                <font style="font-family: Comic Sans MS; font-weight: bolder;">Elysian</font>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav nav-underline">
+                    <li class="nav-item">
+                        <a class="btn btn-dark" id="logout" onclick="logout();">Logout</a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <center>
+        <h1>INFLUENCER PROFILE</h1>
+    </center>
+    <br>
+    <form class="row g-3" method="post" enctype="multipart/form-data">
+        <input type="hidden" name="hdn" id="hdn">
+        <div class="row">
+            <div class="col-md-10 offset-md-1 border border-dark border-bottom-0">
+                <center>
+                    <div class="col" style="font-size: large; font-weight: bold;">Profile Pic</div>
+                    <p>
+                        <img src="pics/31903202.jpg" alt="Profile Pic" width="200" height="200" id="prev"
+                            style="border-radius: 50%;"> &nbsp;&nbsp;
+                        <br>
+                        <input type="file" name="picpath" id="picpath" onchange="doPrev(this,prev)">
+                    </p>
+                </center>
+                <div class="row gx-5 gy-3">
+                    <div class="col-md-4">
+                        <label for="email" class="form-label">Email</label>
+                        <div class="input-group has-validation">
+                            <span class="input-group-text" id="inputGroupPrepend">@</span>
+                            <input type="text" class="form-control" id="email" name="email"
+                                aria-describedby="inputGroupPrepend" placeholder="email id" required readonly>
+                            <div class="invalid-feedback">
+                                Please choose a username.
+                            </div>
+                            
+                            <button type="button" class="btn btn-warning" data-bs-toggle="modal" id="btnsearch"
+                                data-bs-target="#signup_modal">
+                                Search
+                            </button>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <label for="iname" class="form-label">Full name</label>
+                        <input type="text" class="form-control" id="iname" name="iname" placeholder="Mark Twain"
+                            required>
+                    </div>
+                    <div class="col-md-2">
+                        <label for="contact" class="form-label" id="errphone">Contact Number</label>
+                        <input type="number" class="form-control" id="contact" name="contact" placeholder="10-digit"
+                            required>
+                    </div>
+                    <!-- <span id="errphone">**</span> -->
+                    <div class="col-md-2">
+                        <label for="gender" class="form-label">Gender</label>
+                        <select class="form-select" id="gender" name="gender" required>
+                            <option selected disabled value="">Choose...</option>
+                            <option>Male</option>
+                            <option>Female</option>
+                            <option>Other</option>
+                        </select>
+                    </div>
+                    <div class="col-md-2">
+                        <label for="dob" class="form-label">Date of Birth</label>
+                        <input type="date" class="form-control" id="dob" name="dob" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="address" class="form-label">Address</label>
+                        <input type="text" class="form-control" id="address" name="address"
+                            placeholder="House number, colony, nearby landmark (optional)" required>
+                    </div>
+                    <div class="col-md-3">
+                        <label for="city" class="form-label">City</label>
+                        <input type="text" class="form-control" id="city" name="city" placeholder="city" required>
+                    </div>
+                    <div class="col-md-3">
+                        <label for="state" class="form-label">State</label>
+                        <input type="text" class="form-control" id="state" name="state" placeholder="state" required>
+                    </div>
+                    <div class="col-md-3">
+                        <label for="insta" class="form-label">Instagram</label>
+                        <input type="text" class="form-control" id="insta" name="insta"
+                            placeholder="Instagram ID" required>
+                    </div>
+                    <div class="col-md-3">
+                        <label for="fb" class="form-label">Facebook</label>
+                        <input type="text" class="form-control" id="fb" name="fb"
+                            placeholder="Facebook ID" required>
+                    </div>
+                    <div class="col-md-3">
+                        <label for="youtube" class="form-label">YouTube</label>
+                        <input type="text" class="form-control" id="youtube" name="youtube"
+                            placeholder="YouTube channel link" required>
+                    </div>
+                    <div class="col-md-3">
+                        <label for="field" class="form-label">Field</label>
+                        <select class="form-select" id="field" name="field" required>
+                            <option selected disabled value="">Choose...</option>
+                            <option>Gaming</option>
+                            <option>Education</option>
+                            <option>Fashion</option>
+                            <option>Entertainment</option>
+                            <option>Sports</option>
+                            <option>Other</option>
+                        </select>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-floating">
+                            <textarea class="form-control" placeholder="Leave a comment here" id="otherinfo" name="otherinfo"
+                                style="height: 100px"></textarea>
+                            <label for="otherinfo">Bio</label>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+                            <label class="form-check-label" for="invalidCheck">
+                                I confirm that the credentials filled in this form are correct.
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <button class="btn btn-primary" type="submit" formaction="/infl-profile-save" id="btnsave">Save Profile</button>
+                        <button class="btn btn-primary" type="submit" formaction="/update-infl-profile" id="btnupdate">Update Profile</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+    <br><br><br>
+</body>

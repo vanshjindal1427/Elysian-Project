@@ -1,0 +1,398 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Elysian</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
+        </script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous">
+        </script>
+    <script src="script/index.js"></script>
+    <link rel="stylesheet" href="style/index.css">
+    <style>
+        a {
+            text-decoration: none;
+        }
+
+        ::-ms-reveal {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Nav Bar -->
+    <nav class="navbar navbar-expand-lg bg-body-info bg-info sticky-top" style="padding: 5px;">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="pics/_d4ce8f95-cabc-4ba7-a67e-dc6f40cf257a.jpeg" alt="Logo" width="30" height="30" style="border-radius: 20%;"
+                    class="d-inline-block align-text-top">
+                <font style="font-family: Comic Sans MS; font-weight: bolder;">Elysian</font>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav nav-underline">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#how">How it Works?</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#team">Our Team</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#reach">Reach us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn btn-dark" href="#" data-bs-toggle="modal"
+                            data-bs-target="#signup_modal">Signup</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="btn btn-dark" href="#" data-bs-toggle="modal" data-bs-target="#login_modal">Login</a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Home -->
+    <div class="container" id="home">
+        <div class="row">
+            <div class="col-md-5">
+                <br><br>
+                <div style="font-size:50px; font-family:Britannic Bold; font-weight:900; color: rgb(4, 4, 98);">
+                    Connect with Top Influencers for Unforgettable Podcasts, Live Shows, and More!
+                </div>
+                <div style="font-weight: lighter; color: gray;">
+                    Discover a seamless way to connect with your favorite influencers for engaging podcasts, dynamic
+                    live shows, and exclusive interactions. Whether you’re looking to inspire, entertain, or inform, our
+                    platform brings you closer to the voices that matter. Join us and create unforgettable experiences
+                    with the industry’s top talents.
+                </div>
+            </div>
+            <div class="col-md-7">
+                <img src="pics/download.png" alt="" width="100%">
+            </div>
+        </div>
+    </div>
+    <!-- Accordion -->
+    <br id="how"><br><br>
+    <center>
+        <div style="font-size: 50px; font-weight: bolder; color: rgb(106, 106, 106);">
+            How it Works?
+        </div>
+    </center>
+    <div class="container">
+        <div class="row justify-content-md-center">
+            <div class="col-md-10">
+                <div class="accordion" id="accordionPanelsStayOpenExample">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true"
+                                aria-controls="panelsStayOpen-collapseOne">
+                                Step #1
+                            </button>
+                        </h2>
+                        <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show">
+                            <div class="accordion-body">
+                                <strong>Create an Account</strong><br> To get started, users need to create an account
+                                on the website. This involves providing basic information such as their
+                                <code>name</code>,<code> email</code>,<code> address</code>, and a
+                                <code>password</code>. Once they have registered, they can log in and access all the
+                                features of the platform.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false"
+                                aria-controls="panelsStayOpen-collapseTwo">
+                                Step #2
+                            </button>
+                        </h2>
+                        <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse">
+                            <div class="accordion-body">
+                                <strong>Navigate to the Influencer Finder</strong> <br>After logging in, users should
+                                navigate to the <code>Influencer Finder</code> section. This is where they can browse
+                                through a curated list of influencers. Each influencer’s profile includes detailed
+                                information such as their niche, follower count, social-media profiles, and previous
+                                collaborations. This helps users get a comprehensive view of each influencer’s reach and
+                                relevance to their campaign.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false"
+                                aria-controls="panelsStayOpen-collapseThree">
+                                Step #3
+                            </button>
+                        </h2>
+                        <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse">
+                            <div class="accordion-body">
+                                <strong>Search for Influencers</strong> <br>If users have specific criteria in mind,
+                                they can use the search function to find influencers that match their needs. They can
+                                filter results based on various parameters such as location, industry, and influencer's
+                                name. This makes it easier to find the perfect influencer for their campaign without
+                                having to sift through countless profiles.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#panelsStayOpen-collapseFour" aria-expanded="false"
+                                aria-controls="panelsStayOpen-collapseFour">
+                                Step #4
+                            </button>
+                        </h2>
+                        <div id="panelsStayOpen-collapseFour" class="accordion-collapse collapse">
+                            <div class="accordion-body">
+                                <strong>Contact Influencers</strong> <br>Once users have identified potential
+                                influencers, they can send them a message directly through the platform. This is
+                                typically done via an integrated email system that ensures all communications are secure
+                                and professional. Users can introduce themselves, outline their campaign, and propose a
+                                collaboration. It’s important to be clear and concise in these messages to increase the
+                                chances of a positive response.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Our Team -->
+    <br id="team"><br><br>
+    <center>
+        <div style="font-size: 50px; font-weight: bolder; color: rgb(106, 106, 106);">
+            Our Team
+        </div>
+    </center><br>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6" style=" box-shadow: lightgray 2px 2px 10px 3px;">
+                <section class="section about-section white-bg" id="about">
+                    <div class="container">
+                        <div class="row align-items-center justify-content-around flex-row-reverse">
+                            <div class="col-lg-6">
+                                <div class="about-text">
+                                    <h3 class="dark-color">Under the guidance of:</h3>
+                                    <h4 class="theme-color">Mr. Rajesh Bansal</h4>
+                                    <p>
+                                    <ul>
+                                        <li>Author of Real Java</li>
+                                        <li>Founder of BCE</li>
+                                        <li>Training Head at SST</li>
+                                        <li>Microsoft Certified Specialist</li>
+                                    </ul>
+                                    </p>
+                                    <div class="btn-bar">
+                                        <a class="px-btn theme" href="https://realjavaonline.com/" target="_blank">My
+                                            Website</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-5 text-center">
+                                <div>
+                                    <img class="about-img" src="pics/itsme.jpg" width="250" height="250"
+                                        style="border-radius: 10%;">
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <div class="col-md-6" style=" box-shadow: lightgray 2px 2px 10px 3px;">
+                <section class="section about-section white-bg" id="about">
+                    <div class="container">
+                        <div class="row align-items-center justify-content-around flex-row-reverse">
+                            <div class="col-lg-6">
+                                <div class="about-text">
+                                    <h3 class="dark-color">Created By:</h3>
+                                    <h4 class="theme-color">Vansh Jindal</h4>
+                                    <p>
+                                    <ul>
+                                        <li>
+                                            Full Stack Web Developer
+                                        </li>
+                                        <li>
+                                            CSE Student
+                                        </li>
+                                        <li>
+                                            Languages- C/C++, Javascript, Nodejs, HTML, CSS, MySQL etc.
+                                        </li>
+                                    </ul>
+                                    </p>
+                                    <div class="btn-bar">
+                                        <a class="px-btn theme" href="">Resume</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-5 text-center">
+                                <div>
+                                    <img class="about-img"
+                                        src="pics/A portrait image of a man wearing formals, with short hair, not wearing glasses or spectacles, .jpeg"
+                                        width="250" height="250" style="border-radius: 10%;">
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+    <br><br>
+    <!-- Reach us -->
+    <br id="reach"><br><br>
+    <center id="team">
+        <div style="font-size: 50px; font-weight: bolder; color: rgb(106, 106, 106);">
+            Reach Us
+        </div>
+    </center><br>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                <div class="ratio ratio-16x9">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3442.8073639904924!2d76.36212627570576!3d30.35642417476799!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x391028ab86533db5%3A0x93cc1f72eae1c9a8!2sThapar%20Institute%20of%20Engineering%20%26%20Technology!5e0!3m2!1sen!2sin!4v1721138092854!5m2!1sen!2sin"
+                        width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <br><br><br>
+    <nav class="navbar bg-secondary-subtle" style="padding: 5px;">
+        <div class="row">
+            <div class="col" style="font-size: x-small;">
+                ©2024 Elysian.in All Rights Reserved
+            </div>
+        </div>
+    </nav>
+    <!-- Signup Modal -->
+    <div class="modal fade" id="signup_modal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="staticBackdropLabel">Sign Up</h1>
+                    <span id="errsignup"
+                        style="margin-left: 50px; color: tomato; font-size: 15px; font-weight: lighter;"></span>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <!-- Signup Content -->
+                    <form action="" method="post">
+                        <div class="row g-3 ">
+                            <div class="col-md-12">
+                                <div class="input-group" id="boxemail">
+                                    <div class="input-group-text" id="iconemail">👤</div>
+                                    <input type="email" class="form-control" id="txtemail" name="txtemail"
+                                        placeholder="Email ID">
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="input-group">
+                                    <div class="input-group-text">🗝️</div>
+                                    <input type="password" class="form-control" id="txtpwd" name="txtpwd"
+                                        placeholder="Password">
+                                </div>
+                                <span id="errpwd" style="font-size:small; color: red;">Password Strength: </span>
+                                <span style=" position: absolute; right: 13px;">
+                                    <input type="checkbox" name=""  onclick="showpwd(txtpwd);">
+                                    <font style="color: blue; font-size: medium;">
+                                        Show Password
+                                    </font>
+                                </span>
+                            </div>
+                            <div class="col-md-12" style="margin-top: 2px;">
+                                <select id="utype" class="form-select">
+                                    <option selected>Influencer/Host...</option>
+                                    <option>Influencer</option>
+                                    <option>Host</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary" id="btnsignup">Sign Up</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Login Modal -->
+    <div class="modal fade" id="login_modal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="staticBackdropLabel">Login</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <!-- Login Content -->
+                    <form action="" method="post">
+                        <div class="row g-3 ">
+                            <div class="col-md-12">
+                                <div class="input-group" id="boxemail">
+                                    <div class="input-group-text" id="iconemail">👤</div>
+                                    <input type="email" class="form-control" id="logemail" name="logemail"
+                                        placeholder="Email ID" autofocus>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="input-group">
+                                    <div class="input-group-text">🗝️</div>
+                                    <input type="password" class="form-control" id="logpwd" name="logpwd"
+                                        placeholder="Password">
+                                </div>
+                                <span style=" position: absolute; right: 13px;">
+                                    <input type="checkbox" name=""  onclick="showpwd(logpwd)">
+                                    <font style="color: blue; font-size: medium;">
+                                        Show Password
+                                    </font>
+                                </span>
+                            </div>
+                            <div class="col-md-4">
+                                <button type="button" class="btn btn-link btn-sm" id="forgotpwd">Forgot
+                                    Password</button>
+                            </div>
+                            <div class="col-md-1">
+                                <div class="spinner-border text-info spinner-border spinner-border-sm" role="status"
+                                    id="spinnerforgotpwd" style="display: none; position: fixed; top: 55%; left: 43%;">
+                                    <span class="visually-hidden">Loading...</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary" id="btnlogin">Login</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

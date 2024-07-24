@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.8.3/angular.min.js"></script>
+    <script>
+        var module = angular.module("myKuchModule", []);
+        var controller = module.controller("myKuchController", function ($scope) {
+            $scope.doJoin = function () {
+                $scope.full = $scope.fnDhruv + " " + $scope.lnApp;
+            }
+            $scope.doClear = function () {
+                $scope.full = "";
+                $scope.fnDhruv = "";
+                $scope.lnApp = "";
+            }
+            $scope.months = ["Jan", "Feb", "March", "April"];
+
+            //------------------------------------------------------
+            $scope.jsonArray = [
+                {
+                    emailid: "bce@gmail.com", pwd: "122", picpath: "fb.png", city: "BTI"
+                },
+                {
+                    emailid: "sst@gmail.com", pwd: "33", picpath: "modisaab.jpg", city: "Delhi"
+                },
+                {
+                    emailid: "real@gmail.com", pwd: "122", picpath: "fb.png", city: "Chandigarh"
+                },
+                {
+                    emailid: "java@gmail.com", pwd: "122", picpath: "modisaab.jpg", city: "Bombay"
+                },
+                {
+                    emailid: "bce@gmail.com", pwd: "122", picpath: "fb.png", city: "Bombay"
+                },
+                {
+                    emailid: "sst@gmail.com", pwd: "33", picpath: "modisaab.jpg", city: "Pune"
+                },
+                {
+                    emailid: "real@gmail.com", pwd: "122", picpath: "fb.png", city: "Bombay"
+                },
+                {
+                    emailid: "java@gmail.com", pwd: "122", picpath: "modisaab.jpg", city: "Delhi"
+                }
+            ]
+
+            $scope.doShowSel = function () {
+                alert($scope.selCity);
+            }
+        })
+    </script>
+    <title>Document</title>
+</head>
+
+<body ng-app="myKuchModule" ng-controller="myKuchController">
+    <p>
+        First Name <input type="text" ng-model="fn">
+    </p>
+    Hello:{{fn}}
+    <hr>
+    <p>
+    <p>
+        F.Name <input type="text" ng-model="fnDhruv"> {{fnApp}}
+    </p>
+    <p>
+        L.Name <input type="text" ng-model="lnApp">
+    </p>
+    <p>
+        <input type="button" ng-click="doJoin();" value="Join Now">
+        <input type="button" ng-click="doClear();" value="Clear">
+
+    </p>
+    <p>
+        Hello : {{full}}
+    </p>
+    </p>
+    Months:
+    <select>
+        <option ng-repeat="str in months" value="{{str}}">{{str}}</option>
+    </select>
+    Days:
+    <select name="" id="">
+        <option ng-repeat="n in [].constructor(31) track by $index" value="{{$index+1}}">{{$index+1}}</option>
+    </select>
+    <hr>
+    <center>
+        <h2>All Users</h2>
+
+        <hr>
+        <center>
+            <select ng-model="selCity" ng-change="doShowSel();">
+                <option ng-repeat="obj in jsonArray" value="{{obj.city}}">{{obj.city}}</option>
+            </select>
+        </center>
+        <hr>
+
+        <table width="700" border="1" rules="all">
+            <tr>
+                <th>Sr.No</th>
+                <th>Email ID</th>
+                <th>Password</th>
+                <th>City</th>
+                <th>Pic</th>
+            </tr>
+            <tr ng-repeat="obj in jsonArray">
+                <td>{{$index+1}}</td>
+                <td>
+                    {{obj.emailid}}
+                </td>
+                <td>
+                    {{obj.pwd}}
+                </td>
+                <td>
+                    {{obj.city}}
+                </td>
+                <td>
+                    {{obj.picpath}}
+                </td>
+            </tr>
+
+        </table>
+    </center>
+    <hr>
+    <center>
+        <h2>CArds</h2>
+    </center>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3" ng-repeat="obj in jsonArray">
+                <div class="card mt-5">
+                    <center> <img src="pics/{{obj.picpath}}" alt="..." height="50%" width="50%"></center>
+                    <div class="card-body">
+                        <h5 class="card-title">{{obj.emailid}}</h5>
+                        <h5 class="card-title">{{obj.pwd}}</h5>
+                        <h5 class="card-title">{{obj.picpath}}</h5>
+                        <h5 class="card-title">{{obj.city}}</h5>
+
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Client Dash</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
+        </script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+        integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="script/client-dash.js"></script>
+    <style>
+        ::-ms-reveal {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg bg-body-info bg-info sticky-top" style="padding: 5px;">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">
+                <img src="pics/_d4ce8f95-cabc-4ba7-a67e-dc6f40cf257a.jpeg" alt="Logo" width="30" height="30" style="border-radius: 20%;"
+                    class="d-inline-block align-text-top">
+                <font style="font-family: Comic Sans MS; font-weight: bolder;">Elysian</font>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav nav-underline">
+                    <li class="nav-item">
+                        <a class="btn btn-dark" id="logout">Logout</a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container overflow-hidden text-center">
+        <div class="row gx-5">
+            <!-- open influencer profile -->
+            <div class="col">
+                <div class="p-4">
+                    <div class="card">
+                        <img src="pics/Screenshot 2024-07-06 221849.png" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Profile</h5>
+                            <p class="card-text">Fill necessary information for your profile (updations can also be done later on).</p>
+                            <a href="/open-client-profile" class="btn btn-info">Open Profile</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- add event modal opening -->
+            <div class="col">
+                <div class="p-4">
+                    <div class="card">
+                        <img src="pics/istockphoto-1209915194-612x612.jpg" class="card-img-top"
+                            alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Influencer Finder</h5>
+                            <p class="card-text">Search for top class Influencers working with Elysian.</p>
+                            <a class="btn btn-info" href="/open_influ_finder">Finder</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- settings -->
+            <div class="col">
+                <div class="p-4">
+                    <div class="card">
+                        <img src="pics/Screenshot 2024-07-08 225619.png" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Settings</h5>
+                            <p class="card-text">Timely update your password to ensure safety.</p>
+                            <a class="btn btn-info" data-bs-toggle="modal"
+                                data-bs-target="#updatepwd_modal">Settings</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- event manager -->
+            <!-- <div class="col">
+                <div class="p-3">
+                    <div class="card">
+                        <img src="pics/istockphoto-1357747202-612x612.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Event Manager</h5>
+                            <p class="card-text">Update or Delete your upcoming events here.</p>
+                            <a href="/open-event-manager" class="btn btn-info">Events</a>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+        </div>
+    </div>
+
+        <div class="toast bg-info" role="alert" aria-live="assertive" aria-atomic="true" id="welcome" style="position: fixed; bottom: 10px; right: 10px;"> 
+            <div class="toast-header">
+                <img src="pics/_d4ce8f95-cabc-4ba7-a67e-dc6f40cf257a.jpeg" class="rounded me-2" alt="..." width="30" height="30">
+                <strong class="me-auto">Elysian</strong>
+                <small>Just now</small>
+                <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+            <div class="toast-body" id="toast">
+                
+            </div>
+        </div>
+
+    
+    <!-- Update Password Modal -->
+    <div class="modal fade" id="updatepwd_modal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="staticBackdropLabel">Update Password</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form class="row g-3">
+                        <div class="col-md-12">
+                            <label for="updtemail" class="form-label">Email ID</label>
+                            <div class="input-group">
+                                <span class="input-group-text" id="inputGroupPrepend2">👤</span>
+                                <input type="text" class="form-control" id="updtemail" name="updtemail"
+                                    aria-describedby="inputGroupPrepend2" required readonly>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <label for="oldpwd" class="form-label">Old Password</label>
+                            <div class="input-group">
+                                <span class="input-group-text" id="inputGroupPrepend2">🗝️</span>
+                                <input type="password" class="form-control" id="oldpwd" name="oldpwd"
+                                    aria-describedby="inputGroupPrepend2" required>
+                            </div>
+                            <span style="font-size:small; color: red;" id="erremail"></span>
+                            <span style=" position: absolute; right: 13px;">
+                                <input type="checkbox" name=""  onclick="showpwd(oldpwd);">
+                                <font style="color: blue; font-size: medium;">
+                                    Show Password
+                                </font>
+                            </span>
+                        </div>
+                        <div class="col-md-12">
+                            <label for="newpwd" class="form-label">New Password</label>
+                            <div class="input-group">
+                                <span class="input-group-text" id="inputGroupPrepend2">🔐</span>
+                                <input type="password" class="form-control" id="newpwd" name="newpwd"
+                                    aria-describedby="inputGroupPrepend2" disabled>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <label for="conpwd" class="form-label">Confirm Password</label>
+                            <div class="input-group">
+                                <span class="input-group-text" id="inputGroupPrepend2">🔓</span>
+                                <input type="password" class="form-control" id="conpwd" name="conpwd"
+                                    aria-describedby="inputGroupPrepend2" disabled>
+                            </div>
+                            <span style="font-size:small; color: red;" id="errconfirm"></span>
+                        </div>
+                        <div class="col-12">
+                            <button class="btn btn-warning" type="button" id="btnupdatepwd" disabled>Update
+                                Password</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
