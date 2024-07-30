@@ -82,7 +82,7 @@ $(document).ready(function(){
             $("#iname").val(jsonary[0].iname);
             $("#contact").val(jsonary[0].contact);
             $("#gender").val(jsonary[0].gender);
-            $("#dob").val(jsonary[0].dob);
+            $("#dob").val(jsonary[0].dob.split("T")[0]);
             $("#address").val(jsonary[0].address);
             $("#city").val(jsonary[0].city);
             $("#state").val(jsonary[0].state);
@@ -91,7 +91,7 @@ $(document).ready(function(){
             $("#youtube").val(jsonary[0].youtube);
             $("#field").val(jsonary[0].field);
             $("#otherinfo").val(jsonary[0].otherinfo);
-            $("#prev").prop("src","uploads/"+jsonary[0].picpath);
+            $("#prev").prop("src",jsonary[0].picpath);
             $("#hdn").val(jsonary[0].picpath);
         }).fail(function(err){
             alert(err.statusText);

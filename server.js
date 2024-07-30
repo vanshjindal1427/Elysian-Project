@@ -2,6 +2,7 @@ var express = require("express");
 var mysql2 = require("mysql2");
 var fileuploader = require("express-fileupload");
 var nodemailer = require('nodemailer');
+var cloudinary = require('cloudinary').v2;
 let app = express();
 
 app.listen(1414, function () {
@@ -50,15 +51,22 @@ var transporter = nodemailer.createTransport({
     //     database: "project",
     //     dateStrings: true
     // }
-    let config = {
-        host: "bqrucbp8xguwhbzu94sw-mysql.services.clever-cloud.com",
-        user: "upzhsboozmdz4jkx",
-        password: "bx87Be1eXFlsqKgD5uBK",
-        database: "bqrucbp8xguwhbzu94sw",
-        dateStrings: true,
-        keepAliveInitialDelay : 10000,
-        enableKeepAlive : true
-    }
+    // let config = {
+    //     host: "bqrucbp8xguwhbzu94sw-mysql.services.clever-cloud.com",
+    //     user: "upzhsboozmdz4jkx",
+    //     password: "bx87Be1eXFlsqKgD5uBK",
+    //     database: "bqrucbp8xguwhbzu94sw",
+    //     dateStrings: true,
+    //     keepAliveInitialDelay : 10000,
+    //     enableKeepAlive : true
+    // }
+    cloudinary.config({ 
+        cloud_name: 'dhd3ofr7h', 
+        api_key: '242238285667416', 
+        api_secret: '4wnsK9kMfyBA8LCVDiO4rymUB7k' // Click 'View Credentials' below to copy your API secret
+    });
+
+    let config = "mysql://avnadmin:AVNS_hrx3WSXOTfHcWyyxRxQ@mysql-3119cfd2-elysian1427-0009.e.aivencloud.com:25697/defaultdb"
     var mysql = mysql2.createConnection(config);
     mysql.connect(function (err) {
         if (err == null)
@@ -256,12 +264,16 @@ app.get("/", function (req, resp) {
 // influencer profile page
 {
     // saving influencer profile
-    app.post("/infl-profile-save", function (req, resp) {
+    app.post("/infl-profile-save",async function (req, resp) {
         let fileName = "";
         if (req.files != null) {
             fileName = req.files.picpath.name;
             let path = __dirname + "/public/uploads/" + fileName;
             req.files.picpath.mv(path);
+            await cloudinary.uploader.upload(path)
+            .then(function(result){
+                fileName = result.url;
+            })
         }
         else {
             fileName = "31903202.jpg";
