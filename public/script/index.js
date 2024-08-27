@@ -69,6 +69,14 @@ $(document).ready(function () {
         }
         $.ajax(obj).done(function (resp) {
             alert(resp);
+            // if (resp === "Sign Up successful") {
+            //     if(utype === "Influencer")
+            //         location.href = ("influencer-dash.html");
+            //     else if(utype ==="Host")
+            //         location.href = ("client-dash.html");
+            // }
+            // else 
+            //     alert(resp);
         }).fail(function (err) {
             alert(err.statusText);
         })

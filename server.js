@@ -93,7 +93,7 @@ app.get("/", function (req, resp) {
             if (err != null) {
                 resp.send("Please insert the details carefully. Try checking the email / password or check if you have chosen between Influencer or Host.");
             } else {
-                resp.send("Sign Up successful");
+                resp.send("User ID Created!\nYou can login now in login section");
             }
         })
     })
