@@ -66,7 +66,7 @@ var transporter = nodemailer.createTransport({
         api_secret: '4wnsK9kMfyBA8LCVDiO4rymUB7k' // Click 'View Credentials' below to copy your API secret
     });
 
-    let config = "mysql://avnadmin:AVNS_hrx3WSXOTfHcWyyxRxQ@mysql-3119cfd2-elysian1427-0009.e.aivencloud.com:25697/defaultdb"
+    let config = "mysql://avnadmin:AVNS_cr8VxDOQPe29jSer6jw@mysql-322e4a48-elysian1427-0009.i.aivencloud.com:25697/defaultdb"
     var mysql = mysql2.createConnection(config);
     mysql.connect(function (err) {
         if (err == null)
